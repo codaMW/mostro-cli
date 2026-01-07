@@ -59,7 +59,7 @@ pub fn check_currency_ticker(currency: String) -> Option<String> {
     selectedcurrency
 }
 
-pub fn load_fiat_values() -> Result<FiatList> {
+pub fn load_fiat_values() -> FiatList {
     let fiat_names = r#"
     {
       "AED": {
@@ -911,7 +911,7 @@ pub fn load_fiat_values() -> Result<FiatList> {
         "rounding": 0,
         "code": "MWK,
         "emoji": "mw",
-        "name_plural": "Malawian kwachas"
+        "name_plural": "Malawian Kwacha"
       },
       "MXN": {
         "symbol": "MX$",
@@ -1475,5 +1475,5 @@ pub fn load_fiat_values() -> Result<FiatList> {
     //Return list
     fiatlist.sort_by(|a, b| a.0.cmp(&b.0));
 
-    ok(fiatlist)
+    fiatlist
 }
